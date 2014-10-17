@@ -34,7 +34,7 @@
                   :title => t('edit', :scope => 'refinery.admin.pages') %>
 
       <%= link_to refinery_icon_tag('delete.png'),
-                  refinery.admin_page_path(page.nested_url),
+                  refinery.admin_delete_page_path(page.nested_url),
                   :class => "cancel confirm-delete",
                   :title => t('delete', :scope => 'refinery.admin.pages'),
                   :data => {
