@@ -1,0 +1,71 @@
+:root {
+
+  --brightness100            : hsl(0, 0%, 100%);
+  --brightness20             : hsl(0, 0%, 20%);
+  --brightness40             : hsl(0, 0%, 40%);
+  --brightness46             : hsl(0, 0%, 46%);
+  --brightness60             : hsl(0, 0%, 60%);
+  --brightness86             : hsl(0, 0%, 86%);
+  --brightness97             : hsl(0, 0%, 96%);
+  // dark colours close together used for setting shadows
+  --darkness0                : hsl(0, 0%, 100%);
+  --darkness50               : hsl(0, 0%, 50%);
+  --darkness82               : hsl(0, 0%, 18%);
+  --darkness83               : hsl(0, 0%, 17%);
+  --darkness84               : hsl(0, 0%, 16%);
+  --darkness85               : hsl(0, 0%, 15%);
+  --darkness85rgb            : rgb(38, 38, 38);
+  --darkness86               : hsl(0, 0%, 14%);
+  --darkness91               : hsl(0, 0%, 9%);
+  --darkness92               : hsl(0, 0%, 8%);
+
+  // commonly used hues
+  --hueBlue                  : 200;
+  --hueInk                   : 50;
+
+  --hueDelete                : 350;
+  --hueError                 : 0;
+  --hueWarn                  : 245;
+  --hueSuccess               : 130;
+
+  --sat5                     : 5%;
+  --sat10                    : 10%;
+  --sat50                    : 50%;
+  --sat100                   : 100%;
+
+  --lightness10              : 10%;
+  --lightness25              : 25%;
+  --lightness50              : 50%;
+  --lightness75              : 75%;
+  --lightness85              : 85%;
+  --lightness100             : 100%;
+
+  // state colours
+
+  --iconDefaultColour        : hsl(var(--hueBlue), var(--sat50), var(--lightness50));
+
+  --delete_colour       : hsl(var(--hueDelete), var(--sat100), var(--lightness50));
+  --done_colour         : hsl(var(--hueSuccess), var(--sat50), var(--lightness50));
+  --errorColour        : hsl(var(--hueError), var(--sat50), var(--lightness50));
+  --errorBackgroundColour        : hsl(var(--hueError), var(--sat100), var(--lightness85));
+  --warning_colour      : hsl(var(--hueWarn), var(--sat50), var(--lightness50));
+
+  // specific use colours
+  --info_icon_blue           : hsl(var(--hueInk), var(--sat50), var(--lightness50));
+  --icon_folder_colour       : hsl(50, 75%, 60%); // dark yellow
+  --icon_locale_colour       : hsl(var(--hueBlue), var(--sat100), var(--lightness85)); // pale blue
+  --icon_page_colour         : hsl(var(--hueBlue), var(--sat100), var(--lightness75)); //
+
+  --icon_preview_colour      : var(--icon_default_colour);
+  --icon_edit_colour         : var(--icon_default_colour);
+  --icon_add_colour          : var(--icon_default_colour);
+
+  --actionBorderColour     : hsl(var(--hueBlue), var(--sat100), var(--lightness85));
+  --actionBackgroundColour : hsl(var(--hueBlue), var(--sat100), var(lightness95));
+
+  --pageColour               : hsl(var(--hueInk), var(--sat5), var(--lightness25));
+  --bodyBackground           : var(--brightness86);
+
+  --hrColour: hsl(var--hueInk), var(--sat5), var(--lightness25);
+
+}
