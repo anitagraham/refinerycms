@@ -1,0 +1,126 @@
+{
+  "commentEmpty": {
+    "iconName": "comment",
+    "font": "regular"
+  },
+  "envelopeEmpty": {
+    "iconName": "envelope-open",
+    "font": "regular"
+  },
+  "envelope": {
+    "iconName": "envelope",
+    "font": "regular"
+  },
+  "fileOpen": {
+    "iconName": "file",
+    "font": "regular"
+  },
+  "magnifying-glass": {
+    "iconName": "magnifying-glass",
+    "font": "regular"
+  },
+  "trashEmtpy": {
+    "iconName": "trash-can",
+    "font": "regular"
+  },
+  "moveVertical": {
+    "iconName": "arrow-down-arrow-up",
+    "font": "solid"
+  },
+  "sortSmallToBig": {
+    "iconName": "arrow-down-short-wide",
+    "font": "solid"
+  },
+  "moveHorizontal": {
+    "iconName": "arrow-right-arrow-left",
+    "font": "solid"
+  },
+  "sortBigToSmall": {
+    "iconName": "arrow-up-wide-short",
+    "font": "solid"
+  },
+  "confirm": {
+    "iconName": "check-double",
+    "font": "solid"
+  },
+  "check": {
+    "iconName": "check",
+    "font": "solid"
+  },
+  "info": {
+    "iconName": "circle-info",
+    "font": "solid"
+  },
+  "question": {
+    "iconName": "circle-question",
+    "font": "solid"
+  },
+  "close": {
+    "iconName": "circle-xmark",
+    "font": "solid"
+  },
+  "comment": {
+    "iconName": "comment",
+    "font": "solid"
+  },
+  "download": {
+    "iconName": "download",
+    "font": "solid"
+  },
+  "envelopeOpen": {
+    "iconName": "envelope-open",
+    "font": "solid"
+  },
+  "file": {
+    "iconName": "file",
+    "font": "solid"
+  },
+  "folderOpen": {
+    "iconName": "folder-open",
+    "font": "solid"
+  },
+  "folder": {
+    "iconName": "folder",
+    "font": "solid"
+  },
+  "grid": {
+    "iconName": "grid",
+    "font": "solid"
+  },
+  "breakLink": {
+    "iconName": "link-slash",
+    "font": "solid"
+  },
+  "list": {
+    "iconName": "list",
+    "font": "solid"
+  },
+  "edit": {
+    "iconName": "pen-to-square",
+    "font": "solid"
+  },
+  "spinner": {
+    "iconName": "spinner",
+    "font": "solid"
+  },
+  "goForward": {
+    "iconName": "square-caret-right",
+    "font": "solid"
+  },
+  "trash": {
+    "iconName": "trash-can",
+    "font": "solid"
+  },
+  "warning": {
+    "iconName": "triangle-exclamation",
+    "font": "solid"
+  },
+  "upload": {
+    "iconName": "upload",
+    "font": "solid"
+  },
+  "preview": {
+    "iconName": "users-viewfinder",
+    "font": "solid"
+  }
+}

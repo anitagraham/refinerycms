@@ -1,71 +1,188 @@
-:root {
+@use 'sass:math';
 
-  --brightness100            : hsl(0, 0%, 100%);
-  --brightness20             : hsl(0, 0%, 20%);
-  --brightness40             : hsl(0, 0%, 40%);
-  --brightness46             : hsl(0, 0%, 46%);
-  --brightness60             : hsl(0, 0%, 60%);
-  --brightness86             : hsl(0, 0%, 86%);
-  --brightness97             : hsl(0, 0%, 96%);
+:root {
+  @function brightness($level) {
+    @return hsl(0 0 $level)
+  }
+  @function percent($level) {
+    @return math.percentage($level)
+  }
+  --brightness100                     : brightness(100);
+  --brightness20                      : hsl(0, 0%, 20%);
+  --brightness40                      : hsl(0, 0%, 40%);
+  --brightness46                      : hsl(0, 0%, 46%);
+  --brightness60                      : hsl(0, 0%, 60%);
+  --brightness70                      : hsl(0, 0%, 70%);
+  --brightness75                      : hsl(0, 0%, 75%);
+  --brightness80                      : hsl(0, 0%, 80%);
+  --brightness86                      : hsl(0, 0%, 86%);
+  --brightness92                      : hsl(0, 0%, 92%);
+  --brightness97                      : hsl(0, 0%, 96%);
   // dark colours close together used for setting shadows
-  --darkness0                : hsl(0, 0%, 100%);
-  --darkness50               : hsl(0, 0%, 50%);
-  --darkness82               : hsl(0, 0%, 18%);
-  --darkness83               : hsl(0, 0%, 17%);
-  --darkness84               : hsl(0, 0%, 16%);
-  --darkness85               : hsl(0, 0%, 15%);
-  --darkness85rgb            : rgb(38, 38, 38);
-  --darkness86               : hsl(0, 0%, 14%);
-  --darkness91               : hsl(0, 0%, 9%);
-  --darkness92               : hsl(0, 0%, 8%);
+  --darkness0                         : hsl(0, 0%, 100%);
+  --darkness50                        : hsl(0, 0%, 50%);
+  --darkness82                        : hsl(0, 0%, 18%);
+  --darkness83                        : hsl(0, 0%, 17%);
+  --darkness84                        : hsl(0, 0%, 16%);
+  --darkness85                        : hsl(0, 0%, 15%);
+  --darkness85rgb                     : rgb(38, 38, 38);
+  --darkness86                        : hsl(0, 0%, 14%);
+  --darkness91                        : hsl(0, 0%, 9%);
+  --darkness92                        : hsl(0, 0%, 8%);
 
   // commonly used hues
-  --hueBlue                  : 200;
-  --hueInk                   : 50;
+  --hueBlue                           : 200;
+  --hueInk                            : 50;
+  --hueRed                            : 0;
+  --hueOrange                         : 32;
+  --hueGreen                          : 128;
 
-  --hueDelete                : 350;
-  --hueError                 : 0;
-  --hueWarn                  : 245;
-  --hueSuccess               : 130;
+  //
+  --huePrimary                        : var(--hueBlue);
+  --hueError                          : var(--hueRed);
+  --hueWarn                           : var(--hueOrange);
+  --hueSuccess                        : var(--hueGreen);
 
-  --sat5                     : 5%;
-  --sat10                    : 10%;
-  --sat50                    : 50%;
-  --sat100                   : 100%;
+  --sat5                              : 5%;
+  --sat10                             : 10%;
+  --sat17                             : 17%;
+  --sat25                             : 25%;
+  --sat50                             : 50%;
+  --sat90                             : 90%;
+  --sat100                            : 100%;
 
-  --lightness10              : 10%;
-  --lightness25              : 25%;
-  --lightness50              : 50%;
-  --lightness75              : 75%;
-  --lightness85              : 85%;
-  --lightness100             : 100%;
+  --lightness10                       : 10%;
+  --lightness25                       : 25%;
+  --lightness30                       : 30%;
+  --lightness35                       : 35%;
+  --lightness50                       : 50%;
+  --lightness60                       : 60%;
+  --lightness75                       : 75%;
+  --lightness85                       : 85%;
+  --lightness95                       : 95%;
+  --lightness100                      : 100%;
 
   // state colours
+  --flash                             : hsl(var(--hueInk), var(--sat25), lightness(10));
+  --iconDefault                       : hsl(var(--huePrimary), var(--sat50), var(--lightness50));
 
-  --iconDefaultColour        : hsl(var(--hueBlue), var(--sat50), var(--lightness50));
-
-  --delete_colour       : hsl(var(--hueDelete), var(--sat100), var(--lightness50));
-  --done_colour         : hsl(var(--hueSuccess), var(--sat50), var(--lightness50));
-  --errorColour        : hsl(var(--hueError), var(--sat50), var(--lightness50));
-  --errorBackgroundColour        : hsl(var(--hueError), var(--sat100), var(--lightness85));
-  --warning_colour      : hsl(var(--hueWarn), var(--sat50), var(--lightness50));
+  --deleteColour                      : hsl(var(--hueError), var(--sat100), var(--lightness50));
+  --done                              : hsl(var(--hueSuccess), var(--sat50), var(--lightness30));
+  --success                           : hsl(var(--hueSuccess), var(--sat100), var(--lightness30));
+  --successBackground                 : hsl(var(--hueSuccess), var(sat50), var(--lightness95));
+  --error                             : hsl(var(--hueError), var(--sat100), var(--lightness30));
+  --errorBackground                   : hsl(var(--hueError), var(--sat100), var(--lightness85));
+  --warning                           : hsl(var(--hueWarn), var(--sat50), var(--lightness50));
 
   // specific use colours
-  --info_icon_blue           : hsl(var(--hueInk), var(--sat50), var(--lightness50));
-  --icon_folder_colour       : hsl(50, 75%, 60%); // dark yellow
-  --icon_locale_colour       : hsl(var(--hueBlue), var(--sat100), var(--lightness85)); // pale blue
-  --icon_page_colour         : hsl(var(--hueBlue), var(--sat100), var(--lightness75)); //
+  --informationBlue                   : hsl(var(--hueBlue), var(--sat50), var(--lightness50));
+  --informationBlueHover              : hsl(var(--hueBlue), var(--sat90), var(--lightness50));
 
-  --icon_preview_colour      : var(--icon_default_colour);
-  --icon_edit_colour         : var(--icon_default_colour);
-  --icon_add_colour          : var(--icon_default_colour);
+  --icon_folder_colour                : hsl(50, 75%, 60%); // dark yellow
+  --iconLocaleColour                  : hsl(var(--huePrimary), var(--sat100), var(--lightness85)); // pale blue
+  --icon_page_colour                  : hsl(var(--huePrimary), var(--sat100), var(--lightness75)); //
 
-  --actionBorderColour     : hsl(var(--hueBlue), var(--sat100), var(--lightness85));
-  --actionBackgroundColour : hsl(var(--hueBlue), var(--sat100), var(lightness95));
+  --icon_preview_colour               : var(--icon_default_colour);
+  --icon_edit_colour                  : var(--icon_default_colour);
+  --icon_add_colour                   : var(--icon_default_colour);
 
-  --pageColour               : hsl(var(--hueInk), var(--sat5), var(--lightness25));
-  --bodyBackground           : var(--brightness86);
+  --actionBorder                      : hsl(var(--huePrimary), var(--sat100), var(--lightness85));
+  --actionBackground                  : hsl(var(--huePrimary), var(--sat100), var(lightness95));
 
-  --hrColour: hsl(var--hueInk), var(--sat5), var(--lightness25);
+  --page                              : hsl(var(--hueInk), var(--sat5), var(--lightness25));
+  --bodyBackground                    : brightness(86);
 
+  --hr                                : hsl(var--hueInk), var(--sat5), var(--lightness25);
+  --lightEmphasis                     : brightness(46);
+
+  --headerBorder                      : hsl(var(--hueInk), var(--sat5), var(--lightness50));
+  --headerBackground                  : brightness(92);
+
+  --menu                              : hsl(var(--huePrimary), var(--sat92), var(--lightness35));
+  --menuBackground                    : brightness(92);
+  --menuHover                         : brightness(100);
+  --menuHoverBackground               : hsl(var(--huePrimary), var(sat90), var(--lightness50));
+
+  --preview                           : hsl(var(--hueInk) var(--sat5) var(--lightness60));
+  --siteLink                          : hsl(var(--hueInk) var(--sat10) var(--lightness75));
+
+  --paginationBackground              : hsl(var(--huePrimary), var(--sat25), var(--lightness85));
+  --paginationHover                   : hsl(var(--hueInk), var(--sat17), var(--lightness85));
+  --paginationDisabled                : hsl(var(--hueInk), var(--sat17), var(--lightness75));
+  --paginationEmphasisBackground      : hsl(var(--hueInk), var(--sat17), var(--lightness75));
+
+  --stripeOn                          : brightness(92);
+  --stripOff                          : brightness(100);
+
+  --treeHoverBackground               : brightness(92);
+  --pageListHoverBackground           : hsl(var(--huePrimary) var(--sat25), var(--lightness85));
+
+  --brownBorder                       : hsl(var(--hueInk), var(--sat5), var(--lightness50));
+  --border                            : brightness(86);
+
+  --selectedImage                     : hsl(var(--huePrimary), var(--sat90), var(--lightness50));
+  --existingImage                     : brightness(60);
+
+  --searchBorder                      : brightness(70);
+
+  // buttons
+  --submitButtonHover                 : hsl(var(--huePrimary) var(sat90) var(lightness75));
+  --buttonBackground                  : hsl(var(--huePrimary) var(--sat90) var(--lightness50));
+  --buttonHoverBackground             : hsl(var(--huePrimary) var(--sat90) var(--lightness60));
+  --buttonActiveBackground            : hsl(var(--huePrimary) var(--sat100) var(--lightness25));
+
+  // dialogs
+  --closeDialogButtonBackground       : brightness(75);
+  --closeDialogButtonActiveBackground : brightness(50);
+  --closeDialogButtonHoverBackground  : brightness(80);
+  --dialogFrameBorder                 : hsl(var(--hueInk) var(--sat17) var(--lightness95));
+  --dialogFormActionsBorder           : brightness(92);
+
+  //  actions
+  --confirmDelete                     : hsl(var(--error) var(--sat100) var(--brightness50));
+  --confirmDeleteActive               : hsl(var(--error) var(--sat100) var(--brightness35));
+  --confirmDeleteHover                : hsl(var(--error) var(--sat100) var(--brightness65));
+
+  // forms
+  // input fields
+  --fieldBorder                       : hsl(var(--huePrimary), var(--sat30), var(--brightness60));
+  --labelBorder                       : brightness(45);
+  --labelBackground                   : brightness(75);
+  --labelColour                       : brightness(100);
+  --labelImportantBackground          : hsl(var(--hueError), var(--sat50), var(--lightness50));
+  --labelWarningBackground            : hsl(var(--hueWarn), var(--sat100) var(--lightness50));
+  --labelSuccessBackground            : hsl(var(--hueSuccess), var(--sat50), var(--lightness50));
+  --labelInformationBackground        : hsl(var(--huePrimary), var(--sat10), var(--lightness60));
+
+  // locale picker
+  --localeBackground                  : brightness(80);
+  --localeHoverBackground             : hsl(var(--huePrimary) var(--sat90) var(--lightness90));
+  --localeActiveBackground            : hsl(var(--huePrimary), var(--sat90), var(--lightness50));
+  --localeSelectedBackground          : hsl(var(--huePrimary), var(--sat90), var(--lightness70));
+  --localeActionBorder                : brightness(45);
+
+//   background gradients
+
+  --backgroundGradientStart           : hsl(60 20% 92%);
+  --backgroundGradientEnd             : hsl(60 16% 84%);
+  --backgroundGradient                : linear-gradient(180deg, var(--backgroundGradientStart), var(--backgroundGradientEnd));
+  --hoverGradientStart                : hsl(60, 14%, 83%);
+  --hoverGradientEnd                  : hsl(60, 16%, 77%);
+  --hoverGradient                     : linear-gradient(180deg, var(--hoverGradientStart), var(--hoverGradientEnd));
+  --orangeGradientStart               : hsl(20 100% 66%);
+  --orangeGradientEnd                 : hsl(20 94% 42%);
+  --orangeGradient                    : linear-gradient(180deg, var(--orangeGradientStart), var(--orangeGradientEnd));
+  --pageGradientMiddle                : hsl(64 56% 5%);
+  --pageGradientEnd                   : hsl(64 88% 3%);
+  --pageGradient                      : linear-gradient(180deg, var(--pageGradientEnd), var(--pageGradientMiddle), var(--pageGradientEnd));
+  --textFieldGrayStart: brightness(80);
+  --textFieldGrayEnd: brightness(95);
+  --textFieldYellowStart: hsl(44 80% 85%);
+  --textFieldYellowEnd: hsl(44 62% 92%);
+  --textFieldRedStart: hsl(360 86% 86%);
+  --textFieldRedEnd: hsl(360 100% 94%);
+  --textFieldGradient: linear-gradient(180deg, var(--textFieldGrayStart), var(--textFieldGrayEnd));
+  --textFieldWarnGradient: linear-gradient(180deg, var(--textFieldYellowStart), var(--textFieldYellowEnd));
+  --textFieldErrorGradient: linear-gradient(180deg, var(--textFieldRedStart), var(--textFieldRedEnd));
 }
+

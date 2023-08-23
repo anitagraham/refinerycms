@@ -1,0 +1,7 @@
+@use '../global';
+
+#other_locales {
+  .animated_hide {
+    transition: opacity 0.5s ease-in-out;
+  }
+}

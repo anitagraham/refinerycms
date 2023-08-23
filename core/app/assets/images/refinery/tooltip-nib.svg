@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+  <style>
+    #nib {
+    fill: #21a7f2;
+    stroke: #62c1f6 }
+  </style>
+  <polygon id="nib" points="0,0 50,0 25,50 "/>
+</svg>

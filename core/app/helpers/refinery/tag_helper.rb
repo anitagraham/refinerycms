@@ -19,19 +19,25 @@ module Refinery
       image_tag path, {:width => 16, :height => 16}.merge(options)
     end
 
-    def action_icon(action, url, title, options={})
-      action_icon_label(action, url, title, options, false)
+    def action_icon(action, url, title, **options)
+      action_icon_label(action, url, title, **options, label: false)
     end
 
-    def action_label(action, url, title, options={})
-      action_icon_label(action, url, title, options, true)
+    def action_label(action, url, title, **options)
+      action_icon_label(action, url, title, **options, label: true)
     end
 
+    def use_symbol(action)
+      tag.svg do
+        tag.use href: "##{action}"
+      end
+    end
     # See icons.scss for defined icons/classes
-    def action_icon_label(action, url, title, options={}, label = true)
+    def action_icon_label(action, url, title, **options)
+      options[:class] ||= ''
       options[:title] = title
-      options[:class].presence ? options[:class] << " #{action}_icon " : options[:class] = "#{action}_icon"
-      options[:class] << ' icon_label' if label
+
+      text = [use_symbol(action), options[:label] ? title : ''].compact.join(' ').html_safe
 
       case action
       when :preview
@@ -39,10 +45,10 @@ module Refinery
       when :delete
         options[:method] = :delete
       when :reorder_done
-        options[:class] << ' hidden'
+        options[:class] += ' hidden'
       end
 
-      link_to(label && title || '', url, options)
+      link_to(text, url, options)
     end
 
     # this stacks the text onto the locale icon (actually a comment balloon)

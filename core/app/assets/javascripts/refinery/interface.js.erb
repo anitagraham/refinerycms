@@ -1,0 +1,35 @@
+const init_interface = () => {
+  let dialogContainer = document.querySelector("body#dialog_container.dialog")
+  if (parent && parent.document.location.href != document.location.href)  { dialogContainer.classList.add('iframed')  }
+//  iframed = function() {
+//    return (parent && parent.document && parent.document.location.href != document.location.href && $.isFunction(parent.$));
+//  };
+
+  //  make buttons from all input:submit elements (classList.add is OK with items which already have a class 'button')
+
+  let submits = document.querySelectorAll('input[type="submit"]')
+  Array.from(submits).forEach(submit => submit.classList.add('button'))
+  let formSubmitButton = document.getElementById('submit_button')
+  formSubmitButton.addEventListener('click', event => {
+    let spinner = event.target.getElementById('spinner')
+    spinner.classList.remove('hide')
+  })
+  
+  if (typeof (visual_editor_init_interface_hook) != 'undefined') {
+    visual_editor_init_interface_hook()
+  }
+
+
+
+  $(".form-actions.form-actions-dialog .form-actions-left a.close_dialog").click(e)
+->
+  titlebar_close_button = $('.ui-dialog-titlebar-close')
+  titlebar_close_button = parent.$('.ui-dialog-titlebar-close')
+  if parent
+    titlebar_close_button.click
+  e.preventDefault()
+
+  $("a.suppress").on
+  "click", (e) ->
+    e.preventDefault()
+}

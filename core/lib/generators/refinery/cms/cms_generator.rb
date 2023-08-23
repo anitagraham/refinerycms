@@ -19,13 +19,13 @@ module Refinery
                            :desc => "Skip over installing or running migrations."
 
     def generate
-      start_pretending?
+      old_pretend = start_pretending?
 
       manage_roadblocks! unless self.options[:update]
 
       ensure_environments_are_sane!
 
-      stop_pretending?
+      stop_pretending? old_pretend
 
       append_gemfile!
 
@@ -333,10 +333,11 @@ end
         new_options = self.options.dup
         new_options[:pretend] = true
         self.options = new_options
+        return old_pretend
       end
     end
 
-    def stop_pretending?
+    def stop_pretending?(old_pretend)
       # Stop pretending
       if destination_path == Refinery.root
         say_status :'-- finished pretending --', nil, :yellow

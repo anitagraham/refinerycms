@@ -1,26 +1,5 @@
-var shiftHeld = false;
-var initialLoad = true;
-
-init_refinery_admin = function(){
-  init_interface();
-  init_flash_messages();
-  init_submit_continue();
-  init_modal_dialogs();
-  init_tooltips();
-  init_ajaxy_pagination();
-};
-
-$(document).ready(init_refinery_admin);
-
-if(typeof(window.onpopstate) == "object"){
-  $(window).bind('popstate', function(e) {
-    // this fires on initial page load too which we don't need.
-    if(!initialLoad) {
-      $(document).paginateTo((location.pathname + location.href.split(location.pathname)[1]));
-    }
-    initialLoad = false;
-  });
-}
+let shiftHeld = false;
+let initialLoad = true;
 
 $.fn.paginateTo = function(stateUrl) {
   // Grab the url, ensuring not to cache.
@@ -636,7 +615,7 @@ var page_options = {
               if( typeof(visual_editor_init) == "function" ) {
                 visual_editor_init();
               }
-              
+
 
               // Wipe the title and increment the index counter by one.
               $('#new_page_part_index').val(parseInt($('#new_page_part_index').val(), 10) + 1);

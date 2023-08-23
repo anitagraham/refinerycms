@@ -1,0 +1,14 @@
+@use '../global';
+
+body.login {
+  #login_container {
+    width: var(--loginWidth);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    header {order: 1}
+    #page_container {order: 2}
+  }
+
+
+}

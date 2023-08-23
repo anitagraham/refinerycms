@@ -1,0 +1,10 @@
+:root {
+  --adminWidth       : 1080px;
+  --menuWidth        : 120px;
+  --loginWidth: 620px;
+  --fontSize: 16px;
+  --fontFamily: Arial, sans-serif;
+  --lineHeight: 1.5;
+  --pageWidth: calc(var(--adminWidth) - var(--menuWidth)); // 960px = 60*16
+  --borderRadius:  0;
+}

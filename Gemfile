@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-ruby "3.1.2"
+ruby "~>3.2.0"
 gemspec
 
-gem 'rails', "~>6.1"
+gem 'rails', "~>7.0"
 gem 'net-smtp', require: false
 gem 'net-imap', require: false
 gem 'net-pop', require: false
@@ -17,10 +17,11 @@ path "./" do
   gem "refinerycms-resources"
 end
 
-gem 'refinerycms-i18n', git: 'https://github.com/anitagraham/refinerycms-i18n', branch: 'ruby3'
+gem 'decorators', path: '/private/var/www/refinery/decorators'
+gem 'refinerycms-i18n', git: 'https://github.com/refinery/refinerycms-i18n', branch: 'master'
 
 # Add support for refinerycms-acts-as-indexed
-gem 'refinerycms-acts-as-indexed', ['~> 4.0', '>= 4.0.0'],
+gem 'refinerycms-acts-as-indexed',  '>= 4.0.0',
   git: 'https://github.com/refinery/refinerycms-acts-as-indexed',
   branch: 'master'
 
@@ -30,13 +31,17 @@ gem 'refinerycms-wymeditor', ['~> 3.0', '>= 3.0.0']
 # Database Configuration
 unless ENV['CI']
   gem 'activerecord-jdbcsqlite3-adapter', '>= 1.3.0.rc1', platform: :jruby
+  group :development, :test do
+  group :development, :test do
   gem 'sqlite3', platform: :ruby
+end
+end
 end
 
 if !ENV['CI'] || ENV['DB'] == 'mysql'
   group :mysql do
     gem 'activerecord-jdbcmysql-adapter', '>= 1.3.0.rc1', platform: :jruby
-    gem 'mysql2', '~> 0.4', :platform => :ruby
+    gem 'mysql2', '~>0.5.5', platform: :ruby
   end
 end
 
@@ -46,6 +51,10 @@ if !ENV['CI'] || ENV['DB'] == 'postgresql'
     gem 'pg', '~> 1.1', platform: :ruby
   end
 end
+
+# assets
+gem 'jsbundling-rails'
+gem 'cssbundling-rails'
 
 group :development, :test do
   gem 'activejob'

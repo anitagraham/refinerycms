@@ -1,0 +1,33 @@
+@use '../global';
+
+body.index {
+  #admin_container {
+    display        : flex;
+    flex-direction : row;
+    flex-wrap      : nowrap;
+    gap: 0;
+
+    header#header {
+      order : 1;
+      width : var(--menuWidth);
+    }
+    #page_container {
+      order : 2;
+      width : var(--pageWidth)
+    }
+  }
+
+  #content {
+    display: grid;
+    grid-template-columns: [records] 2fr [actions] 1fr;
+    grid-template-areas:
+    'flash flash'
+    'header header'
+    'records actions';
+    gap: 1rem;
+  }
+
+  #flash_container {grid-area: flash}
+  #records {grid-area: records}
+  #actions {grid-area: actions}
+}
